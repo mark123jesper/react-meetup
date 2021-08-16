@@ -1,4 +1,4 @@
-import React, {useState , useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import MeetupList from '../components/Meetups/MeetupList';
 
 const AllMeetups = () => {
@@ -21,14 +21,14 @@ const AllMeetups = () => {
                     ...data[key]
                 };
 
-                meetups.push(meetup)
+                meetups.unshift(meetup)
             }
 
 
             setIsLoading(false);
             setLoadedMeetups(meetups);
         });
-        
+
     }, []);
 
     if (isLoading) {
